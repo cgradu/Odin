@@ -1,3 +1,6 @@
 [submodule "css-exercises"]
 	path = css-exercises
 	url = https://github.com/cgradu/css-exercises.git
+[submodule "html-exercises"]
+	path = html-exercises
+	url = https://github.com/cgradu/html-exercises.git
