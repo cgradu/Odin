@@ -1,0 +1,58 @@
+* {
+    font-size: larger;
+    border: 1px solid #000;
+}
+
+.flex {
+    height: 100px;
+    border: 2px solid purple;
+}
+
+.flex-container {
+    display: flex;
+
+    /* flex-direction: column; */
+    /* sets the main-axis value (the cross-axis changes as well!) */
+
+    /* justify-content: center; */
+    /* sets the alignment of the flex items on the main axis */
+
+    /* align-items: center; */
+    /* sets the alignment of the flex items on the cross-axis */
+
+    /* flex-wrap: wrap; */
+    /* wraps items to the next line if they overlap */
+
+    /* align-content: flex-end; */
+    /* works only when wrap */
+
+    /* gap: 1em; */
+    height: 800px;
+    background-color: #f1c40f;
+}
+
+.item-one {
+    background-color: #e74c3c;
+    /* flex-grow: 1; */
+    /* flex-shrink: 5; */
+    /* flex-basis: 0; */
+    /* overrides height and widht properties */
+    /* flex: 1 0 0; */
+    /* all three properties mentioned above */
+    /* font-size: 1.5em; */
+    /* align-self: flex-end; */
+    /* only aligns this item */
+    /* order: 1; */
+    /* the order in which they apear on the screen */
+}
+
+.item-two {
+    background-color: #3498db;
+    flex-shrink: 5;
+}
+
+.item-three {
+    background-color: #2ecc71;
+    /* flex-grow: 1; */
+    /* order: -1; */
+}

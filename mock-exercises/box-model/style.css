@@ -1,0 +1,39 @@
+/* Those two styling properties are used so that all the elements of the page use border-box sizing */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Highlights the border to make it easier to differentiate all the box elements */
+p,
+ul {
+    border: 2px solid rebeccapurple;
+}
+
+/* Played with all the box properties */
+span,
+li {
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid blue;
+    margin: 10px;
+    /* box-sizing: border-box; */
+}
+
+/* Played with the display options */
+ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 0px;
+}
+
+.inline {
+    display: inline;
+}
