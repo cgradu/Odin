@@ -4,3 +4,6 @@
 [submodule "html-exercises"]
 	path = html-exercises
 	url = https://github.com/cgradu/html-exercises.git
+[submodule "landing_page"]
+	path = landing_page
+	url = https://github.com/cgradu/landing-page.git
