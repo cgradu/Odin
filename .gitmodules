@@ -7,6 +7,3 @@
 [submodule "landing_page"]
 	path = landing_page
 	url = https://github.com/cgradu/landing-page.git
-[submodule "landing_pages"]
-	path = landing_pages
-	url = https://github.com/cgradu/landing-page.git
