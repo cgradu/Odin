@@ -7,3 +7,6 @@
 [submodule "landing_page"]
 	path = landing_page
 	url = https://github.com/cgradu/landing-page.git
+[submodule "javascript-exercises"]
+	path = javascript-exercises
+	url = https://github.com/cgradu/javascript-exercises.git
