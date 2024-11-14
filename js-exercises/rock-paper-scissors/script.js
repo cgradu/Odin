@@ -66,12 +66,7 @@ function playGame() {
             alert("You lost!");
             break;
         }
-        
-        if(humanChoice.toLowerCase() === computerChoice.toLowerCase()) {
-            i--;
-        }
         humanChoice = getHumanChoice();
         computerChoice = getComputerChoice();
     }
-
 }
