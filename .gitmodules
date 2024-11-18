@@ -13,3 +13,6 @@
 [submodule "etch-a-sketch"]
 	path = etch-a-sketch
 	url = https://github.com/cgradu/etch-a-sketch.git
+[submodule "rock-paper-scissors"]
+	path = rock-paper-scissors
+	url = https://github.com/cgradu/rock-paper-scissors.git
