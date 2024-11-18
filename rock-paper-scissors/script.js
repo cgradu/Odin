@@ -1,12 +1,7 @@
 const options = ["Rock", "Paper", "Scissors"];
-
 let humanScore = 0;
 let computerScore = 0;
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
 
-
-playGame();
 
 function getComputerChoice() {
     let last_opt = 2; // 2 -> index for Scissors
@@ -15,58 +10,95 @@ function getComputerChoice() {
     return options[choice];
 }
 
-function getHumanChoice() {
-    let input = prompt(`Choose one of the following: ${options[0]}, ${options[1]}, ${options[2]}.`);
-    return input;
-}
-
 function playRound(humanChoice, computerChoice) {
+    const div = document.createElement("div");
     if(humanChoice.toLowerCase() === "rock") {
         if(computerChoice === "Rock") {
-            alert(`You both picked ${humanChoice}. Nobody wins.`);
+            div.textContent = `You both picked ${humanChoice}. Nobody wins the round.`;
         } else if(computerChoice === "Paper") {
-            alert(`Computer chose ${computerChoice}. Computer wins.`);
+            div.textContent = `Computer chose ${computerChoice}. Computer wins the round.`;
             computerScore++;
         } else if(computerChoice === "Scissors") {
-            alert(`Computer chose ${computerChoice}. Player wins.`);
-            humanScore++;          
+            div.textContent = `Computer chose ${computerChoice}. Player wins the round.`;
+            humanScore++;
         }
     } else if(humanChoice.toLowerCase() === "paper") {
         if(computerChoice === "Rock") {
-            alert(`Computer chose ${computerChoice}. Player wins.`);
+            div.textContent = `Computer chose ${computerChoice}. Player wins the round.`;
             humanScore++;
         } else if(computerChoice === "Paper") {
-            alert(`You both picked ${humanChoice}. Nobody wins.`);
+            div.textContent = `You both picked ${humanChoice}. Nobody wins the round.`;
         } else if(computerChoice === "Scissors") {
-            alert(`Computer chose ${computerChoice}. Computer wins.`);
+            div.textContent = `Computer chose ${computerChoice}. Computer wins the round.`;
             computerScore++;
         }
     } else if(humanChoice.toLowerCase() === "scissors") {
         if(computerChoice === "Rock") {
-            alert(`Computer chose ${computerChoice}. Computer wins.`);
+            div.textContent = `Computer chose ${computerChoice}. Computer wins the round.`;
             computerScore++;
         } else if(computerChoice === "Paper") {
-            alert(`Computer chose ${computerChoice}. Player wins.`);
+            div.textContent = `Computer chose ${computerChoice}. Player wins the round.`;
             humanScore++;
         } else if(computerChoice === "Scissors") {
-            alert(`You both picked ${humanChoice}. Nobody wins.`);
+            div.textContent = `You both picked ${humanChoice}. Nobody wins the round.`;
         }
     } else {
-        alert("Invalid choice. Don't cheat!");
+        div.textContent = "Invalid choice. Don't cheat!";
+    }
+    if(humanScore  == 5|| computerScore == 5) {
+        if (humanScore > computerScore)
+            alert(`You won!`);
+        else
+            alert(`You lost!`);
+        location.reload();
+    } else {
+        const score = document.createElement("div");
+        score.textContent = `Player: ${humanScore}, Computer: ${computerScore}`;
+        div.appendChild(score);
+        div.style.margin = "10px 0px";
+        document.body.appendChild(div);
     }
 }
 
-function playGame() {
-    for(let i = 0; i < 5; i++) {
-        playRound(humanChoice, computerChoice);
-        if(humanScore == 3) {
-            alert("You win!");
-            break;
-        } else if(computerScore == 3) {
-            alert("You lost!");
-            break;
-        }
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-    }
-}
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
+
+rockButton.style.width = "100px";
+rockButton.style.margin = "10px 20px";
+rockButton.style.height= "30px";
+
+paperButton.style.width = "100px";
+paperButton.style.marginRight = "20px";
+paperButton.style.height= "30px";
+
+scissorsButton.style.width = "100px";
+scissorsButton.style.height= "30px";
+
+rockButton.textContent = "Rock";
+paperButton.textContent = "Paper";
+scissorsButton.textContent = "Scissors";
+
+let computerChoice = 0;
+rockButton.addEventListener("click", () => {
+    computerChoice = getComputerChoice();
+    playRound(rockButton.textContent , computerChoice);
+});
+
+paperButton.addEventListener("click", () => {
+    computerChoice = getComputerChoice();
+    playRound(paperButton.textContent , computerChoice);
+});
+
+scissorsButton.addEventListener("click", () => {
+    playRound(scissorsButton.textContent, computerChoice);
+    computerChoice = getComputerChoice();
+});
+
+document.body.style.fontSize = "18px";
+document.body.style.color = "white";
+document.body.style.backgroundColor = "black";
+
+document.body.appendChild(rockButton);
+document.body.appendChild(paperButton);
+document.body.appendChild(scissorsButton);
