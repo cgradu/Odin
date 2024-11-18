@@ -10,3 +10,6 @@
 [submodule "javascript-exercises"]
 	path = javascript-exercises
 	url = https://github.com/cgradu/javascript-exercises.git
+[submodule "etch-a-sketch"]
+	path = etch-a-sketch
+	url = https://github.com/cgradu/etch-a-sketch.git
